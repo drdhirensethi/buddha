@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ app_name }}</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Clinical MVP</p>
+          <h1>{{ app_name }}</h1>
+          <p class="subtitle">
+            Secure patient intake and visit tracking for geriatric care.
+          </p>
+        </div>
+        <div class="card credential-card">
+          <h2>Default Access</h2>
+          <p>Email: <code>admin@buddha.local</code></p>
+          <p>Password: <code>ChangeMe123!</code></p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <h2>Login</h2>
+          <form id="login-form">
+            <label>Email</label>
+            <input name="username" type="email" value="admin@buddha.local" required />
+            <label>Password</label>
+            <input name="password" type="password" value="ChangeMe123!" required />
+            <button type="submit">Sign In</button>
+          </form>
+          <p id="login-status" class="muted"></p>
+        </div>
+
+        <div class="card">
+          <h2>Create Patient</h2>
+          <form id="patient-form">
+            <div class="two-col">
+              <input name="patient_code" placeholder="Patient Code" required />
+              <input name="date_of_birth" type="date" required />
+            </div>
+            <div class="two-col">
+              <input name="first_name" placeholder="First Name" required />
+              <input name="last_name" placeholder="Last Name" required />
+            </div>
+            <div class="two-col">
+              <input name="sex" placeholder="Sex" required />
+              <input name="phone" placeholder="Phone" />
+            </div>
+            <textarea name="address" placeholder="Address"></textarea>
+            <button type="submit">Save Patient</button>
+          </form>
+          <p id="patient-status" class="muted"></p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <div class="section-title">
+            <h2>Patients</h2>
+            <input id="search-input" placeholder="Search name, code, or phone" />
+          </div>
+          <div id="patient-list" class="list"></div>
+        </div>
+
+        <div class="card">
+          <h2>Create Visit</h2>
+          <form id="visit-form">
+            <input name="patient_id" type="number" placeholder="Patient ID" required />
+            <input name="visit_date" type="datetime-local" required />
+            <input name="chief_complaint" placeholder="Chief Complaint" />
+            <textarea name="history_of_present_illness" placeholder="History of Present Illness"></textarea>
+            <textarea name="assessment_summary" placeholder="Assessment Summary"></textarea>
+            <textarea name="plan" placeholder="Plan"></textarea>
+            <button type="submit">Save Visit</button>
+          </form>
+          <p id="visit-status" class="muted"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+  </html>
+
