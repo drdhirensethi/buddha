@@ -24,6 +24,7 @@ pip install -r requirements.txt
 
 ```powershell
 uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
 
 4. Open `http://127.0.0.1:8000`
